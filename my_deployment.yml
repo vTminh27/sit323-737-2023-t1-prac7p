@@ -1,21 +1,21 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: my-deployment
-  labels:
+apiVersion: apps/v1                                # The API version being used for the deployment
+kind: Deployment                                   # The type of Kubernetes object being defined
+metadata:                                          # Metadata for the deployment
+  name: my-deployment                              # The name of the deployment
+  labels:                                          # Labels to identify the deployment
     app: my-app
-spec:
-  replicas: 3
-  selector:
+spec:                                              # Specification for the deployment
+  replicas: 3                                      # The desired number of replicas to create
+  selector:                                        # The selector to match for the deployment
     matchLabels:
       app: my-app
-  template:
-    metadata:
+  template:                                        # Template for the deployment
+    metadata:                                      # Metadata for the template
       labels:
         app: my-app
-    spec:
-      containers:
-      - name: my-container
-        image: minhvu220904/image-test:latest
-        ports:
-        - containerPort: 3000
+    spec:                                          # Specification for the template
+      containers:                                  # Containers to run in the template
+      - name: my-container                         # Name of the container
+        image: minhvu220904/image-test:latest      # The Docker image to use for the container
+        ports:                                     # Ports to expose in the container
+        - containerPort: 3000                      # The port number to expose
